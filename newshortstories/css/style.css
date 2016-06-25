@@ -1,0 +1,153 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jun 9, 2016, 8:11:06 PM
+    Author     : EduhG
+*/
+
+@import url(https://fonts.googleapis.com/css?family=Dosis);
+@import url(https://fonts.googleapis.com/css?family=Merienda);
+@import url(https://fonts.googleapis.com/css?family=Raleway);
+@import url(https://fonts.googleapis.com/css?family=Play);
+@import url(https://fonts.googleapis.com/css?family=Convergence);
+
+body{
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+    margin: 0px;
+    background-color: #3498db;
+}
+
+.content{
+    position: absolute;
+    bottom: 35px;
+    top: 0px;
+    width: 100%;
+}
+.left{
+    font-family: 'Raleway', sans-serif;
+    width: 25%;
+    height: 100%;
+    position: relative;
+    float: left;
+}
+.header{
+    font-family: 'Play', sans-serif;
+    font-size: 45px;
+    font-weight: bold;
+    width: 100%;
+    height: 80px;
+    text-align: center;
+}
+.header span{
+    line-height: 85px;
+    margin-left: 0px;
+}
+.content_nav{
+    font-family: 'Convergence', sans-serif;
+    width: 100%;
+    /*position: absolute;
+    top: 80px;
+    bottom: 0px;*/
+}
+.content_nav ul{
+    padding: 0px;
+    margin: 0px;
+    margin-top: 10px;
+    border-top: 1px solid rgba(0,0,0, 0.3);
+    border-bottom: 1px solid rgba(250,250,250, 0.3);
+}
+.content_nav li{
+    list-style: none;
+    text-decoration: none;
+    height: 50px;
+    border-top: 1px solid rgba(250,250,250, 0.4);
+    border-bottom: 1px solid rgba(0,0,0, 0.3);
+    margin-left: 0px;
+    cursor: pointer;
+}
+.content_nav li:active, .content_nav li:hover, .content_nav li:focus{
+    background-color: #2ecc71;
+}
+.content_nav li a{
+    line-height: 50px;
+    text-decoration: none;
+    margin-left: 10px;
+    width: 100%;
+    color: #000;
+}
+.active{
+    background-color: #2ecc71;
+    color: #fff;
+}
+.active a{
+    color: #fff;
+}
+.right{
+    font-family: 'Merienda', cursive;
+    width: 75%;
+    height: 100%;
+    float: right;
+    position: relative;
+}
+.content_data{
+    font-family: 'Merienda', cursive;
+    width: 100%;
+    background-color: #ECF0F1;
+    position: absolute;
+    top: 40px;
+    bottom: 0px;
+    border-radius: 10px 0 0px 10px;
+    overflow: auto;
+    overflow-y: scroll;
+    height: auto;
+}
+.content_title {
+    width: 100%;
+    height: 40px;
+    background-color: #3498db;
+}
+.story_no{
+    position: absolute;
+    top: 4px;
+    right: 5px;
+    background-color: #2ecc71;
+    height: 80px;
+    z-index: 1;
+    width: 80px;
+    text-align: center;
+    margin-bottom: -30px;
+    border-radius: 40px;
+    border: 1px solid rgba(0,0,0, 0.3);
+}
+.story_no span {
+    line-height: 75px;
+    font-size: 50px;
+}
+.story_title {
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    border-radius: 10px 0 0px 0px;
+    font-family: 'Convergence', sans-serif;
+    border-bottom: 1px solid rgba(0,0,0, 0.3);
+}
+.story_title span {
+    line-height: 50px;
+    font-size: 40px;
+}
+.story_content {
+    border-top: 1px solid rgba(250,250,250, 0.4);
+    padding: 0 20px;
+}
+.footer{
+    font-family: 'Raleway', sans-serif;
+    width: 100%;
+    height: 35px;
+    position: absolute;
+    bottom: 0px;
+    background-color: #3498db;
+}
