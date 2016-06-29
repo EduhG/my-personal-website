@@ -142,7 +142,26 @@
                         #content {
                                 position: relative;
                         }
+                        
+                        .personal_details {
+                                padding-top: 12%;
+                                padding-left: 100px;
+                        }
+                                
+                        .personal_details p{
+                                line-height: 50px;
+                        }
 
+                        .name{
+                                font-size: 80px;
+                                margin: 0px;
+                        }
+
+                        .title{
+                                font-size: 30px;
+                                margin: 30px 5px;
+                                color: #ecf0f1;
+                        }
                         /*-------------------------------------------------------------------------------------------------------------------
 
                         Footer Section
@@ -151,9 +170,9 @@
                         
                         footer{
                                 background: #293F50;
-                                position: fixed;
+                                position: fixed !important;
                                 bottom: 0px;
-                                height: 100px;
+                                min-height: 100px;
                                 width: 100%;
                                 text-align: center;
                                 padding-top: 8px;
@@ -165,6 +184,7 @@
                                 font-size: 80% !important;
                                 font-family: 'Raleway', sans-serif;
                         }
+                        
                         .center {
                                 text-align: center;
                         }
@@ -191,7 +211,7 @@
                         </header>
                         
                         <div id="content">
-                                <div class="row" style="height:100%">
+                                <div class="row" style="height:100%; position:absolute; width: 100%;">
                                         <div class="col-7 personal_details">
                                                 <p class="name">Edwin Nyangena</p>
                                                 <p class="title">Front End Web Developer</p>
@@ -237,7 +257,7 @@
                 <script type="text/javascript">
                         $(document).ready(function(event){
                                 var height = $( window ).height() - $( "#header" ).height() - $( "#footer" ).height();
-                                //$("#content").css("min-height", height);
+                                $("#content").css("min-height", height);
                         });
                 </script>
         
