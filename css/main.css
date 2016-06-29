@@ -3,16 +3,15 @@
 
 /*-------------------------------------------------------------------------------------------------------------------
 
-Page Layout
+Responsive Page Layout
 
 -------------------------------------------------------------------------------------------------------------------*/
-
 body, html {
         height: 100%;
         width: 100%;
         margin: 0;
         padding: 0;
-        background: #009CD5;
+        background: #3498db;
         font-family: 'Open Sans', sans-serif;
         -webkit-transform: translate3d(0, 0, 0);
                 transform: translate3d(0, 0, 0);
@@ -21,7 +20,7 @@ body, html {
 p, h1, h2, h3, h4, h5, h6, ul, li, a {
         padding: 0;
         margin: 0;
-        color: #F6F7F2;
+        color: #ecf0f1;
 }
 
 a {
@@ -89,67 +88,112 @@ ul {
         .col-12 {width: 100%;}
 }
 
+/*-------------------------------------------------------------------------------------------------------------------
+
+Page Layout
+
+-------------------------------------------------------------------------------------------------------------------*/
 #container {
-        width: 100%;
-        height: 100%;
+	position:relative; /* needed for footer positioning*/
+	margin:0 auto; /* center, not in IE5 */
+	width:100%;
+        min-width: 290px;
+	
+	height:auto !important; /* real browsers */
+	height:100%; /* IE6: treaded as min-height*/
+
+	min-height:100%; /* real browsers */
 }
 
-header {        
+#header {
+	padding:0em;
         height: 100px;
-        padding: 0px;
-        position: relative;
-        background: transparent;
-        color: #F6F7F2;
+        
 }
 
 #content {
-        padding: 0;
-        margin: 0;
-        min-height: -moz-calc(100% - 200px); /* Firefox */
-        min-height: -webkit-calc(100% - 200px); /* Chrome, Safari */
-        min-height: calc(100% - 200px); /* IE9+ and future browsers */
+	padding:1em 1em 5em; /* bottom padding for footer */
 }
 
-footer {
-        position: absolute;
-        background: #293F50;
-        bottom: 0px;
-        height: 100px;
-        width: 100%;
-        text-align: center;
-        border-top: 0px solid rgba(250,250,250, 0.3);
-        z-index: 1;
-}    
+#footer {
+	position:absolute;
+        padding: 0em 0;
+	width:100%;
+	bottom:0; /* stick to bottom */
+	background: #293F50;
+}
 
 /*-------------------------------------------------------------------------------------------------------------------
 
 Header Section
 
 -------------------------------------------------------------------------------------------------------------------*/
-
-.header {
-        color: #F6F7F2;
+.header-container {
+        height: 100%;
 }
 
+@media only screen and (min-width: 640px) {
+        #header {
+                padding:0em;
+                height: 100px;
+                
+                -webkit-transform-style: preserve-3d;
+                -moz-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+        }
+        
+        .header-nav {
+                height: 100%;
+                font-family: 'Titillium Web', sans-serif;
+                float: right;
+                -webkit-transform-style: preserve-3d;
+                -moz-transform-style: preserve-3d;
+                transform-style: preserve-3d;
+
+                position: relative;
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        }
+        
+        .header-nav nav {
+                position: relative;
+                display: inline-block;
+                float: right;
+
+                top: 50%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        }
+}
+
+@media only screen and (min-width: 481px) {
+        .header-nav {
+                display: block !important;
+                height: 100%;
+                font-family: 'Titillium Web', sans-serif;
+        }
+}
 .header-nav {
-        background: transparent;
+        display: block;
         height: 100%;
         font-family: 'Titillium Web', sans-serif;
 }
 
 .header-nav nav {
         position: relative;
-        top: 20%;
         display: inline-block;
         float: right;
 }
 
-.header-nav nav ul{
+.header-nav nav ul {
         display: inline-block;
         float: right;
 }
 
-.header-nav nav li{
+.header-nav nav li {
         display: inline-block;
         border-radius: 0px;
         padding: 10px;
@@ -158,12 +202,17 @@ Header Section
         cursor: pointer;
 }
 
+.logo {
+        display: none;
+        
+}
+
 .show-nav {
         display: none;
         position: absolute;
         right: 0;
         top: 0;
-        width: 50px;
+        width: 45px;
         height: 100%;
         text-align: center;
         line-height: 50%;
@@ -173,10 +222,124 @@ Header Section
 .show-nav i {
         height: 50%;
         color: #fff;
-        font-size: 30px;
+        font-size: 26px;
         text-align: center;
-        padding-top: 4%;
+        padding-top: 6%;
         margin: 25%;
+}
+
+@media only screen and (max-width: 630px) {
+        #header {
+                padding:0em;
+                height: 60px;
+        }
+        
+        .header-nav nav{
+                height: 100%;
+                font-family: 'Titillium Web', sans-serif;
+                font-size: 90%;
+        }
+        
+        .header-nav nav li {
+                border-radius: 0px;
+                padding: 10px;
+                width: auto;
+                min-width: 100px;
+                text-align: center;
+                cursor: pointer;
+                border: 0px solid;
+        }
+}
+
+@media only screen and (max-width: 480px) {
+        #header {
+                padding:0em;
+                height: 60px;
+                background: #293F50 !important;
+        }
+        
+        .header-container {
+                position: relative;
+        }
+        
+        .logo, .show-nav {
+                display: block;
+                color: #fff;
+                height: 100%;
+        }
+        
+        .logo {
+                height: 100%;
+                position: relative;
+        }
+        
+        .show-nav i {
+                margin: 0;
+                padding: 0;
+                font-size: 26px;
+                text-align: center;
+                cursor: pointer;
+                position: relative;
+                top: 56%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        }
+        
+        .logo p{
+                padding: 0;
+                margin: 0;
+                font-size: 30px;
+                padding-left: 10px;
+                
+                position: relative;
+                top: 45%;
+                -webkit-transform: translateY(-50%);
+                -ms-transform: translateY(-50%);
+                transform: translateY(-50%);
+        }
+        
+        .header-nav {
+                display: none;
+                width: 250px;
+                position: absolute;
+                height: auto;
+                padding: 0;
+                top: 100%;
+                right: 0;
+                z-index: 1;
+                border-top: 5px solid #F89F3D;
+                background: #293F50 !important;
+        }
+        
+        .header-nav nav {
+                position: relative;
+                display: inline-block;
+                float: left;
+                width: 100%;
+        }
+        
+        .header-nav nav ul{
+                display: block !important;
+                width: 100% !important;
+                background: #293F50;
+        }
+
+        .header-nav nav li{
+                display: block;
+                width: 100%;
+                text-align: left;
+                border-top: 1px solid rgba(255, 255, 255, 0.2);
+                border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+        }
+        
+        .header-nav nav li:first-child {
+                border-top: 0px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .header-nav nav li:last-child {
+                border-bottom: 0px solid rgba(0, 0, 0, 0.5);
+        }
 }
 
 /*-------------------------------------------------------------------------------------------------------------------
@@ -184,43 +347,122 @@ Header Section
 Content Section
 
 -------------------------------------------------------------------------------------------------------------------*/
-
-.content {
-         height: 100%;
-        -webkit-align-self: stretch;
-        align-self: stretch;
+#content {
+        position: relative;
 }
 
-.image {
-        text-align: center;
+.personal_details {
+        padding-top: 12%;
+        padding-left: 100px;
 }
 
-img {
-        height: auto;
-        min-height: 100%;
-        width: 100%;
-        object-fit:fill;
-}
-
-.details {
-        
-        height: inherit; 
-}
-
-.image {
-        min-height: 100%;
-}
 .personal_details p{
-    line-height: 50px;
+        line-height: 50px;
 }
 
 .name{
-    font-size: 80px;
-    margin: 0px;
+        font-size: 80px;
+        margin: 0px;
 }
 
 .title{
-    font-size: 30px;
-    margin: 30px 5px;
-    color: #ecf0f1;
+        font-size: 30px;
+        margin: 30px 5px;
+        color: #ecf0f1;
+}
+
+.image img {
+        width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+        .personal_details {
+                padding-top: 25%;
+                padding-left: 10px;
+                text-align: center;
+        }
+
+        .personal_details p{
+                line-height: 50px;
+        }
+
+        .name{
+                font-size: 55px;
+                margin: 0px;
+        }
+
+        .title{
+                font-size: 30px;
+                margin: 30px 5px;
+                color: #ecf0f1;
+        }
+}
+
+@media only screen and (max-width: 480px) {
+        .personal_details {
+                padding-top: 55%;
+                padding-left: 10px;
+                text-align: center;
+        }
+
+        .personal_details p{
+                line-height: 50px;
+        }
+
+        .name{
+                font-size: 45px;
+                margin: 0px;
+        }
+
+        .title{
+                font-size: 20px;
+                margin: 30px 5px;
+                color: #ecf0f1;
+        }
+}
+
+/*-------------------------------------------------------------------------------------------------------------------
+
+Footer Section
+
+-------------------------------------------------------------------------------------------------------------------*/
+
+footer p{
+        color: #ecf0f1;
+        font-size: 70% !important;
+        font-family: 'Raleway', sans-serif;
+}
+
+.center {
+        text-align: center;
+}
+
+.icons-only {
+        display: none;
+}
+
+@media only screen and (max-width: 768px) {
+        .icons-only {
+                display: block;
+                text-align: right;
+        }
+        
+        .icons-only img{
+                margin: 0 8px;
+        }
+        
+        .icons-only p{
+                display: none;
+        }
+        
+        .contacts .center{
+                display: none;
+        }
+}
+
+@media only screen and (max-width: 480px) {
+        .icons-only {
+                display: block;
+                text-align: center;
+        }
 }

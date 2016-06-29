@@ -347,8 +347,79 @@ Header Section
 Content Section
 
 -------------------------------------------------------------------------------------------------------------------*/
+#content {
+        position: relative;
+}
 
+.personal_details {
+        padding-top: 12%;
+        padding-left: 100px;
+}
 
+.personal_details p{
+        line-height: 50px;
+}
+
+.name{
+        font-size: 80px;
+        margin: 0px;
+}
+
+.title{
+        font-size: 30px;
+        margin: 30px 5px;
+        color: #ecf0f1;
+}
+
+.image img {
+        width: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+        .personal_details {
+                padding-top: 25%;
+                padding-left: 10px;
+                text-align: center;
+        }
+
+        .personal_details p{
+                line-height: 50px;
+        }
+
+        .name{
+                font-size: 55px;
+                margin: 0px;
+        }
+
+        .title{
+                font-size: 30px;
+                margin: 30px 5px;
+                color: #ecf0f1;
+        }
+}
+
+@media only screen and (max-width: 480px) {
+        .personal_details {
+                padding-top: 55%;
+                padding-left: 10px;
+                text-align: center;
+        }
+
+        .personal_details p{
+                line-height: 50px;
+        }
+
+        .name{
+                font-size: 45px;
+                margin: 0px;
+        }
+
+        .title{
+                font-size: 20px;
+                margin: 30px 5px;
+                color: #ecf0f1;
+        }
+}
 
 /*-------------------------------------------------------------------------------------------------------------------
 
